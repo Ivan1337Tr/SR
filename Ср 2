@@ -1,0 +1,43 @@
+from math import sqrt, log
+
+print('Введите значения диапозона')
+a = float(input())
+b = float(input())
+print('Введите значение шага:')
+h = float(input())
+x = min(a, b)
+while True:
+    y = log(x + sqrt(1 + (x) ** 2))
+    print(x, y)
+    x += h
+    if x > max(a, b):
+        break
+
+s = 0
+print('Введите число от 1 до 5')
+n = int(input())
+while n > 5:
+    print('Так не работает')
+    n = int(input())
+for b in range(n, 6):
+    s += ((2*n-3)/(n*(n+1)))
+print(s / 2)
+
+n = int(input('введите n'))
+i = 0
+x = 0
+p = ' '
+a = 0
+st = int(input('сумму какого столбца вам нужна  '))
+for i in range(n, 0, -1):
+    int(x)
+    x = x + 1
+    y = n - i
+    x1 = str(x)
+    if len(x1) == 1:
+        print((p + x1 + p) * i, ('0' + p * 2) * y)
+    else:
+        print((p + x1) * i, ('0' + p * 2) * y)
+for st in range(0, n + 2 - st):
+    a = a + st
+print(a)
