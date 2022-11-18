@@ -1,0 +1,35 @@
+print('Введите x')
+x=float(input())
+print('Введите y')
+y=float(input())
+if -0.5 < x < 3.5 and 1 < y < 2.8:
+    print('точка пренадлежит прямоугольнику')
+    print('S=', 4*1.8)
+    print('P=', 2*4 + 2*1.8)
+elif x == -0.5 and 1 <= y <= 2.8:
+    print('точка на границе')
+    print('x=',x+1, 'y=',y)
+elif x == 3.5 and 1 <= y <= 2.8:
+    print('точка на границе')
+    print('x=',x - 1, 'y=',y)
+elif y == 1 and -0.5 <= x <= 3.5:
+    print('точка на границе')
+    print('x=', x, 'y=', y+1)
+elif y == 2.8 and -0.5 <= x <= 3.5:
+    print('точка на границе')
+    print('x=',x, 'y=',y-1)
+else:
+    print('точка не пренадлежит прямоугольнику')
+    print('Введите две строки')
+    a = str(input())
+    b = str(input())
+    if len(a)>len(b):
+        if len(a)>4*1.8:
+            print(a, '>S')
+        else:
+            print('S>', a)
+    else:
+        if len(b)>4*1.8:
+            print(b, '>S')
+        else:
+            print('S>', b)
