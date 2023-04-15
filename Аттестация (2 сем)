@@ -1,0 +1,25 @@
+class Patient:
+    count = 0
+
+    def __init__(self, name, age, diagnosis, room_number, admission_date):
+        self.name = name
+        self.age = age
+        self.diagnosis = diagnosis
+        self.room_number = room_number
+        self.admission_date = admission_date
+        Patient.count += 1
+
+    def print_info(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+        print("Diagnosis:", self.diagnosis)
+        print("Room number:", self.room_number)
+        print("Admission date:", self.admission_date)
+
+# пример использования класса
+p1 = Patient("Илья Коновалов", 45, "пневмания", 101, "2021-05-01")
+p2 = Patient("Анастасия Терешкова", 32, "аппендицит", 203, "2021-06-15")
+
+print("Номер пациента:", Patient.count)
+p1.print_info()
+p2.print_info()
