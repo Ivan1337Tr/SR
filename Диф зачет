@@ -1,0 +1,47 @@
+class Power:
+    def __init__(self, name):
+        self.name = name
+        self.active = True
+
+
+class Superhero:
+    def __init__(self, name, skill_list):
+        self.name = name
+        self.skill_list = skill_list
+
+    def usePower(self, this_skill):
+        if self.skill_list[this_skill].active:
+            print(f"{self.name} использует {self.skill_list[this_skill].name}")
+        else:
+            print(f"Невозможно использовать {self.skill_list[this_skill].name} - способность заблокирована!")
+
+    def getKryptonite(self, this_skill=None):
+        import random
+        if not this_skill:
+            this_skill = random.randint(0, len(self.skill_list) - 1)
+            while not self.skill_list[this_skill].active:
+                this_skill = random.randint(0, len(self.skill_list) - 1)
+        else:
+            self.skill_list[this_skill].active = False
+
+    def getPowerStatus(self):
+        for skill in self.skill_list:
+            print(f"{skill.name}: {'активна' if skill.active else 'заблокирована'}")
+
+    def purify(self):
+        for skill in self.skill_list:
+            skill.active = True
+
+
+laser_power = Power('Лазер')
+missiles_power = Power('Ракеты')
+electro_power = Power('Электрощит')
+rearm_power = Power('Перезарядка')
+marvel = Superhero(name='Мстители', skill_list=[laser_power, missiles_power, electro_power, rearm_power])
+marvel.usePower(1)
+marvel.getKryptonite(1)
+marvel.getKryptonite()
+marvel.getPowerStatus()
+marvel.usePower(1)
+marvel.purify()
+marvel.getPowerStatus()
